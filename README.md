@@ -20,4 +20,4 @@ Deployed on Heroku.
 
 ## Made By
 
- FSociety
+ FSociety (@steverogers07 @Gunjan-Shekhawat and me)
