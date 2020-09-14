@@ -1,0 +1,316 @@
+<%- include("partials/header") %>
+
+<div class="container">
+
+	<!-- ==================== HEADING ==================== -->
+	<div class="animate four">
+		<span>A</span><span>n</span><span>a</span><span>l</span><span>y</span><span>s</span><span>i</span><span>s</span>
+	</div>
+
+	<!-- ==================== GRAPH ==================== -->
+	<canvas id="myChart"></canvas>
+
+	<!-- ==================== DOWNLOAD BUTTON ==================== -->
+	<div style="float:right;" class="sub-main">
+		<span><button class="button-two" type="button" id="download-pdf">Download PDF</button></span>
+	</div>
+
+	<!--   ==================== GENDER FILTER ===================== -->
+	<div class="dropdown" style="float:left;margin:0px 100px;">
+		<button class="button-three dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+			aria-haspopup="true" aria-expanded="false">Gender
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<form action="/analysis" method="POST">
+				<input name="gender" value="male" style="display:none">
+				<input name="filter" value="1" style="display:none">
+				<button class="dropdown-item">Male</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="gender" value="female" style="display:none">
+				<input name="filter" value="1" style="display:none">
+				<button class="dropdown-item">Female</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="gender" value="" style="display:none">
+				<input name="filter" value="1" style="display:none">
+				<button class="dropdown-item">N/A</button>
+			</form>
+		</div>
+	</div>
+
+	<!--   ==================== STATE FILTER ===================== -->
+	<div class="dropdown" style="float:left;margin:0px 100px;">
+		<button class="button-three dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+			aria-haspopup="true" aria-expanded="false">State
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height:300px;overflow:scroll;">
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Andhra Pradesh" style="display:none">
+				<button class="dropdown-item">Andhra Pradesh</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Assam" style="display:none">
+				<button class="dropdown-item">Assam</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Punjab" style="display:none">
+				<button class="dropdown-item">Punjab</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Rajasthan" style="display:none">
+				<button class="dropdown-item">Rajasthan</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Goa" style="display:none">
+				<button class="dropdown-item">Goa</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Chandigarh" style="display:none">
+				<button class="dropdown-item">Chandigarh</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Chhattisgarh" style="display:none">
+				<button class="dropdown-item">Chhattisgarh</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Haryana" style="display:none">
+				<button class="dropdown-item">Haryana</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Himachal Pradesh" style="display:none">
+				<button class="dropdown-item">Himachal Pradesh</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Jharkhand" style="display:none">
+				<button class="dropdown-item">Jharkhand</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Karnataka" style="display:none">
+				<button class="dropdown-item">Karnataka</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Meghalaya" style="display:none">
+				<button class="dropdown-item">Meghalaya</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Odisha" style="display:none">
+				<button class="dropdown-item">Odisha</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Puducherry" style="display:none">
+				<button class="dropdown-item">Puducherry</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Tamil Nadu" style="display:none">
+				<button class="dropdown-item">Tamil Nadu</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Telangana" style="display:none">
+				<button class="dropdown-item">Telangana</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Delhi" style="display:none">
+				<button class="dropdown-item">Delhi</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Kerala" style="display:none">
+				<button class="dropdown-item">Kerala</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Madhya Pradesh" style="display:none">
+				<button class="dropdown-item">Madhya Pradesh</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Uttarakhand" style="display:none">
+				<button class="dropdown-item">Uttarakhand</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Bihar" style="display:none">
+				<button class="dropdown-item">Bihar</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="Uttar Pradesh" style="display:none">
+				<button class="dropdown-item">Uttar Pradesh</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="2" style="display:none">
+				<input name="state" value="West Bengal" style="display:none">
+				<button class="dropdown-item">West Bengal</button>
+			</form>
+
+		</div>
+	</div>
+
+	<!--   ==================== AGE FILTER ===================== -->
+	<div class="dropdown" style="float:left;margin:0px 100px;">
+		<button class="button-three dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+			aria-haspopup="true" aria-expanded="false">Age
+		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<form action="/analysis" method="POST">
+				<input name="filter" value="3" style="display:none">
+				<input name="kind" value="1" style="display:none">
+				<button class="dropdown-item">0-9</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="3" style="display:none">
+				<input name="kind" value="2" style="display:none">
+				<button class="dropdown-item">10-19</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="3" style="display:none">
+				<input name="kind" value="3" style="display:none">
+				<button class="dropdown-item">20-29</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="3" style="display:none">
+				<input name="kind" value="4" style="display:none">
+				<button class="dropdown-item">30-39</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="3" style="display:none">
+				<input name="kind" value="5" style="display:none">
+				<button class="dropdown-item">40-49</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="3" style="display:none">
+				<input name="kind" value="6" style="display:none">
+				<button class="dropdown-item">50-59</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="3" style="display:none">
+				<input name="kind" value="7" style="display:none">
+				<button class="dropdown-item">60-69</button>
+			</form>
+			<form action="/analysis" method="POST">
+				<input name="filter" value="3" style="display:none">
+				<input name="kind" value="8" style="display:none">
+				<button class="dropdown-item">70+</button>
+			</form>
+		</div>
+	</div>
+
+	<!--   ==================== DATE FILTER ===================== -->
+	<div style="float:left;margin:75px 0;">
+		<form action="/analysis" method="POST">
+			<input name="filter" value="4" style="display:none">
+			<label for="date">Date Range:</label>
+			<input type="date" name="date1">
+			<input type="date" name="date2">
+			<button class="button-three">Submit</button>
+		</form>
+	</div>
+</div>
+
+<script>
+
+	// ==================== DATA PROCESSING ===================== //
+
+	var date = [];
+	var count = [];
+	var dict = {};
+	<% data1.forEach(function (person) { %>
+		var dat = "<%=person["reportedOn"]%>"
+		if (!(dat in dict)) {
+			dict[dat] = 1;
+			date.push(dat);
+		}
+		else {
+			dict[dat]++;
+		}
+	<% }); %>
+		date.forEach(function (eachDate) {
+			count.push(dict[eachDate]);
+		});
+
+	// ==================== GRAPH ==================== //
+
+	let myChart = document.getElementById('myChart').getContext('2d');
+	// Global Options
+	Chart.defaults.global.defaultFontFamily = 'Lato';
+	Chart.defaults.global.defaultFontSize = 18;
+	Chart.defaults.global.defaultFontColor = '#777';
+
+	let massPopChart = new Chart(myChart, {
+		type: 'line',
+		data: {
+			labels: date,
+			datasets: [{
+				label: 'Deceased',
+				data: count,
+				backgroundColor: 'yellow',
+				borderWidth: 1,
+				borderColor: '#777',
+				hoverBorderWidth: 3,
+				hoverBorderColor: '#000'
+			}]
+		},
+		options: {
+			title: {
+				display: true,
+				text: 'Deceased',
+				fontSize: 25
+			},
+			legend: {
+				display: true,
+				position: 'right',
+				labels: {
+					fontColor: '#000'
+				}
+			},
+			layout: {
+				padding: {
+					left: 50,
+					right: 0,
+					bottom: 0,
+					top: 0
+				}
+			},
+			tooltips: {
+				enabled: true
+			}
+		}
+	});
+
+	// ======================= DOWNLOAD OPTION ==================== //
+
+	//add event listener to button
+	document.getElementById('download-pdf').addEventListener("click", downloadPDF);
+	//donwload pdf from original canvas
+	function downloadPDF() {
+		var canvas = document.querySelector('#myChart');
+		//creates image
+		var canvasImg = canvas.toDataURL("image/jpeg", 1.0);
+		//creates PDF from img
+		var doc = new jsPDF('landscape');
+		doc.setFontSize(20);
+		doc.text(15, 15, "Cool Chart");
+		doc.addImage(canvasImg, 'JPEG', 10, 10, 280, 150);
+		doc.save('canvas.pdf');
+	}
+</script>
+
+<%- include("partials/footer") %>
