@@ -14,7 +14,7 @@ Deployed on Heroku.
 ## Build and run
 
 1. Clone Repo
-   - `$> git clone https://github.com/shivamgupta1999/Covid-19Help.git`
+   - `$ git clone https://github.com/shivamgupta1999/Covid-19Help.git`
 2. Open Terminal
 3. Enter command: node app.js
 
