@@ -11,7 +11,7 @@ A Website containing all the information regarding Covid-19.
 
 Deployed on Heroku.
 
-## How to run
+## Build and run
 
 1. Clone Repo
    - `$> git clone https://github.com/shivamgupta1999/Covid-19Help.git`
