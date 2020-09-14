@@ -1,7 +1,7 @@
 # Covid-19Help
 
 A Website containing all the information regarding Covid-19.
-[https://covid-19help.herokuapp.com/] (Open the website.)
+[https://covid-19help.herokuapp.com] (Open the website.)
 
 ## Tech Stack
 
