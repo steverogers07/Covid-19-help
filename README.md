@@ -16,7 +16,7 @@ Deployed on Heroku.
 1. Clone Repo
    - `git clone https://github.com/shivamgupta1999/Covid-19Help.git`
 2. To install all the dependencies, enter command:
-   -  `node install`
+   -  `npm install`
 3. To run:
    -  `node app.js`
 
