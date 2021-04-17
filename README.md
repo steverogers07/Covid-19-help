@@ -11,11 +11,16 @@ MongoDB
 Deployed on Heroku.
 
 # Build and run
-1.Clone Repo
+1.Clone Repo:
+
     git clone https://github.com/shivamgupta1999/Covid-19Help.git
+    
 2.To install all the dependencies, enter command:
+    
     npm install
+    
 3.To run:
+    
     node app.js
 
 Made By
