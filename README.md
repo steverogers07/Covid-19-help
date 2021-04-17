@@ -3,8 +3,11 @@ A Website containing all the information regarding Covid-19. Check the website
 
 # Tech Stack
 NodeJS
+
 Express
+
 MongoDB
+
 Deployed on Heroku.
 
 # Build and run
