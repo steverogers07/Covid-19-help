@@ -1,0 +1,41 @@
+<%- include("partials/header") %>
+
+<div class="container">
+	
+	<!-- ==================== HEADING ==================== -->
+	<div class="animate six">
+		<span>C</span><span>o</span><span>n</span><span>t</span><span>a</span><span>c</span><span>t</span> &nbsp;
+		<span>P</span><span>a</span><span>g</span><span>e</span>
+	</div>
+	
+	<!-- ==================== TABLE OF CONTENT ==================== -->
+	<div>
+		<table class="table table-bordered">
+		  <thead>
+				<tr class="z1">
+					<th scope="col">State Name</th>
+				  	<th scope="col">Helpline Number</th>
+				</tr>
+		  </thead>
+		  <tbody>
+			<% datas["data"]["contacts"]["regional"].forEach(function(state) { %>
+				<tr>
+				  	<th class="z2" scope="row"><%=state["loc"] %></th>
+				  	<td><%= state["number"] %></td>
+				</tr>
+			<% }) %>
+		  </tbody>
+		</table>
+	</div>
+	
+	<div class="datesection" style="float:right;">
+		<% var str = datas["lastRefreshed"]; %>
+		<% var date=str.substring(0,10) %>
+		<% var time=str.substring(11,19) %>
+		<span>Last Updated - </span><br>
+		<span>Date: <%= date %></span><br>
+		<span>Time: <%= time %></span>
+	</div>
+</div>
+
+<%- include("partials/footer") %>

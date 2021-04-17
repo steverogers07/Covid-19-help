@@ -1,0 +1,105 @@
+<%- include("partials/header") %>
+
+<div class="container">
+	<div class="animate three">
+		<span>M</span><span>e</span><span>d</span><span>i</span><span>c</span><span>a</span><span>l</span> &nbsp;
+		<span>C</span><span>o</span><span>l</span><span>l</span><span>e</span><span>g</span><span>e</span> &nbsp;
+		<span>B</span><span>e</span><span>d</span><span>s</span>
+	</div>
+	<div class="dropdown" style="float:left;margin:0 25px;">
+		<button class="button-three dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">State
+  		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="max-height:300px;overflow:scroll;">
+			<a class="dropdown-item" href="/medicalcolleges/Andhra Pradesh">Andhra Pradesh</a>
+			<a class="dropdown-item" href="/medicalcolleges/A & N Islands">A and N Islands</a>
+			<a class="dropdown-item" href="/medicalcolleges/Assam">Assam</a>
+			<a class="dropdown-item" href="/medicalcolleges/Tripura">Tripura</a>
+			<a class="dropdown-item" href="/medicalcolleges/Punjab">Punjab</a>
+			<a class="dropdown-item" href="/medicalcolleges/Rajasthan">Rajasthan</a>
+			<a class="dropdown-item" href="/medicalcolleges/Sikkim">Sikkim</a>
+			<a class="dropdown-item" href="/medicalcolleges/Goa">Goa</a>
+			<a class="dropdown-item" href="/medicalcolleges/Chandigarh">Chandigarh</a>
+			<a class="dropdown-item" href="/medicalcolleges/Chhattisgarh">Chhattisgarh</a>
+			<a class="dropdown-item" href="/medicalcolleges/Haryana">Haryana</a>
+			<a class="dropdown-item" href="/medicalcolleges/Himachal Pradesh">Himachal Pradesh</a>
+			<a class="dropdown-item" href="/medicalcolleges/Jammu & Kashmir">Jammu and Kashmir</a>
+			<a class="dropdown-item" href="/medicalcolleges/Jharkhand">Jharkhand</a>
+			<a class="dropdown-item" href="/medicalcolleges/Karnataka">Karnataka</a>
+			<a class="dropdown-item" href="/medicalcolleges/Maharastra">Maharastra</a>
+			<a class="dropdown-item" href="/medicalcolleges/Manipur">Manipur</a>
+			<a class="dropdown-item" href="/medicalcolleges/Meghalaya">Meghalaya</a>
+			<a class="dropdown-item" href="/medicalcolleges/Odisha">Odisha</a>
+			<a class="dropdown-item" href="/medicalcolleges/Puducherry">Puducherry</a>
+			<a class="dropdown-item" href="/medicalcolleges/Tamil Nadu">Tamil Nadu</a>
+			<a class="dropdown-item" href="/medicalcolleges/Telangana">Telangana</a>
+			<a class="dropdown-item" href="/medicalcolleges/Delhi">Delhi</a>
+			<a class="dropdown-item" href="/medicalcolleges/Gujarat">Gujarat</a>
+			<a class="dropdown-item" href="/medicalcolleges/Kerala">Kerala</a>
+			<a class="dropdown-item" href="/medicalcolleges/Madhya Pradesh">Madhya Pradesh</a>
+			<a class="dropdown-item" href="/medicalcolleges/Uttarakhand">Uttarakhand</a>
+			<a class="dropdown-item" href="/medicalcolleges/Bihar">Bihar</a>
+			<a class="dropdown-item" href="/medicalcolleges/Uttar Pradesh">Uttar Pradesh</a>
+			<a class="dropdown-item" href="/medicalcolleges/West Bengal">West Bengal</a>
+		</div>
+	</div>
+	
+	<div class="dropdown" style="float:left;margin:0 50px;">
+		<button class="button-three dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Type
+  		</button>
+		<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			<a class="dropdown-item" href="/medicalcolleges/Society">Society</a>
+			<a class="dropdown-item" href="/medicalcolleges/Trust">Trust</a>
+			<a class="dropdown-item" href="/medicalcolleges/Govt.">Govt.</a>
+			<a class="dropdown-item" href="/medicalcolleges/University">University</a>
+			<a class="dropdown-item" href="/medicalcolleges/Private">Private</a>
+			<a class="dropdown-item" href="/medicalcolleges/Govt-Society">Govt-Society</a>
+		</div>
+	</div>
+	
+	<div class="datesection" style="float:right;">
+		<% var str = data["lastRefreshed"]; %>
+		<% var date=str.substring(0,10) %>
+		<% var time=str.substring(11,19) %>
+		<span>Last Updated - </span><br>
+		<span>Date: <%= date %></span><br>
+		<span>Time: <%= time %></span>
+	</div>
+	<div style="margin-bottom:100px;">
+		<table class="table table-bordered scrolling-box force-overflow" id="style-7">
+		  <thead>
+			<tr>
+				<th scope="col">State Name</th>
+				<th scope="col">Institute Name</th>
+				<th scope="col">City</th>
+				<th scope="col">Type</th>
+				<th scope="col">Admission Capacity</th>
+				<th scope="col">Hospital Beds</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<% data["data"]["medicalColleges"].forEach(function(college) { %>
+				<tr>
+					<% if(college["ownership"]=="Govt") college["ownership"]="Govt."; %>
+					<% if(flag==1&&college["state"]==stateName) { %>
+					<th scope="row"><%=college["state"] %></th>
+					<td><%= college["name"] %></td>
+					<td><%= college["city"] %></td>
+					<td><%= college["ownership"] %></td>
+					<td><%= college["admissionCapacity"] %></td>
+					<td><%= college["hospitalBeds"] %></td>
+					<% } else if(college["ownership"]==stateName) { %>
+					<th scope="row"><%=college["state"] %></th>
+					<td><%= college["name"] %></td>
+					<td><%= college["city"] %></td>
+					<td><%= college["ownership"] %></td>
+					<td><%= college["admissionCapacity"] %></td>
+					<td><%= college["hospitalBeds"] %></td>
+					<% } %>
+				</tr>
+			<% }) %>
+		  </tbody>
+		</table>	
+	</div>
+</div>
+
+<%- include("partials/footer") %>

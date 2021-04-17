@@ -1,0 +1,50 @@
+<%- include("partials/header") %>
+<div class="container">
+	
+	<!-- ==================== HEADING ==================== -->
+	<div class="animate seven">
+		<span>H</span><span>o</span><span>s</span><span>p</span><span>i</span><span>t</span><span>a</span><span>l</span> &nbsp;
+		<span>B</span><span>e</span><span>d</span><span>s</span>
+	</div>
+	
+	<!-- ==================== TABLE OF CONTENT ==================== -->
+	<div>
+		<table class="table table-bordered">
+			<thead>
+				<tr class="z1">
+					<th scope="col">State Name</th>
+					<th scope="col">Rural Hospitals</th>
+					<th scope="col">Rural Beds</th>
+					<th scope="col">Urban Hospitals</th>
+					<th scope="col">Urban Beds</th>
+					<th scope="col">Total Hospitals</th>
+					<th scope="col">Total Beds(State Wise)</th>
+				</tr>
+			</thead>
+			<tbody>
+			<% datas["data"]["regional"].forEach(function(state) { %>
+				<tr>
+					<th class="z2" scope="row"><%=state["state"] %></th>
+					<td><%= state["ruralHospitals"] %></td>
+					<td><%= state["ruralBeds"] %></td>
+					<td><%= state["urbanHospitals"] %></td>
+					<td><%= state["urbanBeds"] %></td>
+					<td><%= state["totalHospitals"] %></td>
+					<td><%= state["totalBeds"] %></td>
+				</tr>
+			<% }) %>
+			</tbody>
+		</table>	
+	</div>
+	
+	<div class="datesection" style="float:right;">
+		<% var str = datas["lastRefreshed"]; %>
+		<% var date=str.substring(0,10) %>
+		<% var time=str.substring(11,19) %>
+		<span>Last Updated - </span><br>
+		<span>Date: <%= date %></span><br>
+		<span>Time: <%= time %></span>
+	</div>
+</div>
+
+<%- include("partials/footer") %>

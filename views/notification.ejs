@@ -1,0 +1,53 @@
+<%- include("partials/header") %>
+<div class="container">
+	
+	<!-- ==================== HEADING ==================== --> 
+	<div class="animate four">
+		<span>N</span><span>o</span><span>t</span><span>i</span><span>f</span><span>i</span><span>c</span><span>a</span><span>t</span><span>i</span><span>o</span><span>n</span> <span>&</span>&nbsp;
+		
+		<span>A</span><span>d</span><span>v</span><span>i</span><span>s</span><span>o</span><span>r</span><span>y</span>&nbsp;
+		<span>P</span><span>a</span><span>g</span><span>e</span>
+
+	<!-- ==================== TABLE OF CONTENT ==================== -->
+	<div>
+		<table class="table table-bordered scrolling-box force-overflow" id="style-7">
+			<thead>
+			<tr class="z1">
+			  <th scope="col">Date</th>
+			  <th scope="col">Notification Title</th>
+			  <th scope="col">Link</th>
+			</tr>
+			</thead>
+			<tbody>
+			<% datas["data"]["notifications"].forEach(function(notify) { %>
+				<tr>
+					<% var str=notify["title"] %>
+					<% var res,title; %>
+					<% if(str.length>10) { %>
+					<% 		res=str.substring(0,11) %>
+					<% 		title=str.substring(11,str.length) %>
+					<% } else { %>
+					<%	res="Not Available"; %>
+					<%	title=notify["title"]; %>
+					<% } %>
+					<th class="z2"scope="row"><%= res %></th>
+					<th class="z2"scope="row"><%= title %></th>
+					<td><a href ="<%=notify["link"]%>" target="_blank"><%= notify["link"] %></a></td>
+				</tr>
+			<% }) %>
+			</tbody>
+		</table>
+	</div>
+
+	</div>
+		<div style="float:right;" class="datesection">
+		<% var str = datas["lastRefreshed"]; %>
+		<% var date=str.substring(0,10) %>
+		<% var time=str.substring(11,19) %>
+		<span>Last Updated - </span><br>
+		<span>Date: <%= date %></span><br>
+		<span>Time: <%= time %></span>
+	</div>
+</div>
+
+<%- include("partials/footer") %>
