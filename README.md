@@ -1,7 +1,7 @@
 # Covid-19-help
 A Website containing all the information regarding Covid-19. Check the website
 
-Tech Stack
+#Tech Stack
 NodeJS
 Express
 MongoDB
