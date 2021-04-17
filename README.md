@@ -1,5 +1,5 @@
 # Covid-19-help
-A Website containing all the information regarding Covid-19. Check the website
+A Website containing all the information regarding Covid-19. [Check the website](https://covid-19help.herokuapp.com/)
 
 # Tech Stack
 NodeJS
@@ -24,4 +24,4 @@ Deployed on Heroku.
     node app.js
 
 Made By
-FSociety (@shivamgupta1999 @Gunjan-Shekhawat and me)
+FSociety ([@shivamgupta1999](https://github.com/shivamgupta1999) [@Gunjan-Shekhawat](https://github.com/Gunjan-Shekhawat) and me)
